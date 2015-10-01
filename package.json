@@ -1,0 +1,32 @@
+{
+  "name": "node-cards",
+  "version": "1.0.0",
+  "description": "Simple playing cards module that supplies creating and shuffling decks, as well as taking cards from decks",
+  "main": "cards.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "npm run test && babel src --out-file ./cards.js",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cdonohue/node-cards.git"
+  },
+  "keywords": [
+    "cards",
+    "shuffle"
+  ],
+  "author": "Chad Donohue <chad.donohue@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cdonohue/node-cards/issues"
+  },
+  "homepage": "https://github.com/cdonohue/node-cards#readme",
+  "dependencies": {
+    "babel": "5.8.23",
+    "chai": "3.3.0",
+    "mocha": "2.3.3"
+  }
+}
