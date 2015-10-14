@@ -14,13 +14,13 @@ var card = function card(index) {
   return { rank: rank, rankValue: rankValue, suit: suit };
 };
 
-var shuffle = function shuffle(collection) {
+var shuffle = function shuffle(collection, randomGenerator) {
   var currentIndex = collection.length,
       collectionCopy = Array.from(collection),
       randomIndex = undefined;
 
   while (currentIndex) {
-    randomIndex = Math.random() * currentIndex-- | 0;
+    randomIndex = Math.floor(randomGenerator.next() * currentIndex--);
     var _ref = [collectionCopy[randomIndex], collectionCopy[currentIndex]];
     collectionCopy[currentIndex] = _ref[0];
     collectionCopy[randomIndex] = _ref[1];

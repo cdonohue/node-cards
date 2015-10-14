@@ -9,13 +9,13 @@ const card = (index) => {
   return { rank, rankValue, suit };
 };
 
-const shuffle = (collection) => {
+const shuffle = (collection, randomGenerator) => {
   let currentIndex = collection.length,
       collectionCopy = Array.from(collection),
       randomIndex;
 
   while (currentIndex) {
-    randomIndex = Math.random() * currentIndex-- | 0;
+    randomIndex = Math.floor(randomGenerator.next() * currentIndex--);
     [collectionCopy[currentIndex], collectionCopy[randomIndex]] = [collectionCopy[randomIndex], collectionCopy[currentIndex]];
   }
 

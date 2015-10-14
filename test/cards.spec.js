@@ -15,7 +15,13 @@ describe('deck', function() {
 
 describe('shuffle', function() {
   let array = [1,2,3,4,5,6,7,8,9,0];
-  let shuffledArray = shuffle(array);
+  let randomGenerator = function *() {
+    while(true) {
+      yield Math.random();
+    }
+  };
+
+  let shuffledArray = shuffle(array, randomGenerator());
   it('should return a shuffled collection', function() {
     expect(shuffledArray.every((x, i) => x === array[i])).to.be.false;
   });
