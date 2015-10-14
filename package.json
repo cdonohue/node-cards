@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "build": "npm test && babel ./src/cards.es6.js --out-file ./cards.js",
+    "build": "npm test && babel src --out-file ./cards.js",
     "test": "mocha"
   },
   "repository": {
